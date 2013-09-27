@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import layouttests.migfxml.sample1.*?>
+
+<MigPane id="rootPane" fx:controller="jmsklienten.JmsKlientenController"
+        styleClass="main-panel"
+        layout="insets 20"
+        cols="[label, pref!][grow, 50::]"
+        rows=""
+        xmlns:fx="http://javafx.com/fxml">
+
+
+    <MenuBar fx:id="menuBar" onKeyPressed="#handleKeyInput">
+          <menus>
+             <Menu text="File">
+                <items>
+                   <MenuItem text="New"/>
+                   <MenuItem text="Open"/>
+                   <MenuItem text="Save"/>
+                   <MenuItem text="Save As"/>
+                   <SeparatorMenuItem  />
+                   <MenuItem text="Exit"/>
+                </items>
+             </Menu>
+             <Menu text="Edit">
+                <items>
+                   <MenuItem text="Copy"/>
+                   <MenuItem text="Cut"/>
+                   <MenuItem text="Paste"/>
+                </items>
+             </Menu>
+             <Menu text="Help">
+                <items>
+                   <MenuItem text="Search" disable="true"/>
+                   <MenuItem text="Online Manual" visible="false"/>
+                   <SeparatorMenuItem />
+                   <MenuItem text="About" onAction="#handleAboutAction"/>
+                </items>
+             </Menu>
+          </menus>
+       </MenuBar>
+    <Button text="Choose file" onAction="#chooseFile" MigPane.cc="skip, gaptop 15, wrap" />
+
+    <Label text="Message file:" /> <TextField fx:id="fileNameTextField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+    <Slider fx:id="slider" min="1" max="100" blockIncrement="1" snapToTicks="true" /><TextField fx:id="sliderValueTextField" prefColumnCount="5" MigPane.cc="wrap" />
+    <Button text="Consume messages:" onAction="#consumeMessage" MigPane.cc="gap :push, gaptop 15"/> <Button fx:id="sendButton" text="Send Message" disable="true" onAction="#sendMessage" MigPane.cc="gap :push, gaptop 15, wrap" />
+    <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
+
+</MigPane >

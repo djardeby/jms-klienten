@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="jmsklienten.JmsKlientenController">
+  <children>
+    <Pane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <MenuBar layoutX="0.0" layoutY="0.0" prefWidth="600.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="File">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Reload properties" />
+                <MenuItem mnemonicParsing="false" text="Close" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Delete" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="About" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
+    </Pane>
+    <TabPane layoutX="0.0" layoutY="24.0" prefHeight="377.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Message">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Button fx:id="sendButton" disable="true" layoutX="539.0" layoutY="311.0" mnemonicParsing="false" onAction="#sendMessage" text="Send" />
+                <Button layoutX="14.0" layoutY="311.0" mnemonicParsing="false" onAction="#consumeMessage" text="Consume" />
+                <TextField fx:id="sliderValueTextField" layoutX="98.0" layoutY="126.0" prefWidth="56.0" />
+                <Button layoutX="35.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseFile" text="Choose file" />
+                <Slider fx:id="slider" layoutX="14.0" layoutY="148.0" />
+                <TextArea id="" fx:id="fileNameTextField" layoutX="154.0" layoutY="22.0" mouseTransparent="false" prefHeight="289.0" prefWidth="432.0" wrapText="true" />
+                <Label layoutX="17.0" layoutY="129.0" text="Message count" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Properties">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
